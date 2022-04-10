@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PiterQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="spb_background" translatesAutoresizingMaskIntoConstraints="NO" id="hBt-TT-gur">
+                                <rect key="frame" x="-285" y="-97" width="1037" height="993"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="511" translatesAutoresizingMaskIntoConstraints="NO" id="P5p-Ig-hfI">
+                                <rect key="frame" x="85" y="132" width="244" height="632.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Piter Quiz" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jb6-ZF-8Hg">
+                                        <rect key="frame" x="0.0" y="0.0" width="244" height="65.5"/>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="60"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qj0-4e-oL6">
+                                        <rect key="frame" x="0.0" y="576.5" width="244" height="56"/>
+                                        <color key="backgroundColor" red="0.95686274770000002" green="0.88235294819999999" blue="0.89411771299999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="40"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Начать">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="P5p-Ig-hfI" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ReN-al-EP4"/>
+                            <constraint firstItem="P5p-Ig-hfI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YVc-hT-CUp"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="83.705357142857139"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="9ld-zD-TjJ">
+            <objects>
+                <viewController id="qfD-jg-pst" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bXW-90-Ffe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="spb_background" translatesAutoresizingMaskIntoConstraints="NO" id="kzb-Zu-myW">
+                                <rect key="frame" x="-194" y="-473" width="916" height="1750"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="yPm-CV-Z2B">
+                                <rect key="frame" x="20" y="44" width="374" height="818"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="NV4-yM-aQh">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="80"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="musicspb" translatesAutoresizingMaskIntoConstraints="NO" id="ntm-rl-qJu">
+                                                <rect key="frame" x="0.0" y="5" width="70" height="70"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="70" id="BC0-yO-6PU"/>
+                                                    <constraint firstAttribute="width" constant="70" id="Cl5-tv-nor"/>
+                                                </constraints>
+                                            </imageView>
+                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" ambiguous="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="EKW-bd-kBy">
+                                                <rect key="frame" x="170" y="38" width="204" height="4"/>
+                                            </progressView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="9iZ-Fu-Zoc"/>
+                                        </constraints>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LgW-xa-qta">
+                                        <rect key="frame" x="0.0" y="91" width="374" height="516"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="750-8B-M37" userLabel="Button Stack">
+                                        <rect key="frame" x="0.0" y="618" width="374" height="200"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BM1-vy-iBf">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="63.5"/>
+                                                <color key="backgroundColor" red="0.95686274770000002" green="0.88235294819999999" blue="0.89411771299999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="30"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Ответ1">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dz3-sG-l2U">
+                                                <rect key="frame" x="0.0" y="68.5" width="374" height="63"/>
+                                                <color key="backgroundColor" red="0.95686274770000002" green="0.88235294819999999" blue="0.89411771299999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="30"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Ответ2">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r6P-G6-xfU">
+                                                <rect key="frame" x="0.0" y="136.5" width="374" height="63.5"/>
+                                                <color key="backgroundColor" red="0.95686274770000002" green="0.88235294819999999" blue="0.89411771299999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="30"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Ответ3">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="374" id="eRH-Ch-hXC"/>
+                                            <constraint firstAttribute="height" constant="200" id="kXk-0a-brg"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="750-8B-M37" firstAttribute="top" secondItem="LgW-xa-qta" secondAttribute="bottom" id="9hk-ly-7BB"/>
+                                    <constraint firstItem="750-8B-M37" firstAttribute="centerY" secondItem="yPm-CV-Z2B" secondAttribute="centerY" id="JHs-pv-ayz"/>
+                                    <constraint firstAttribute="trailing" secondItem="LgW-xa-qta" secondAttribute="trailing" id="KPf-m5-R5z"/>
+                                    <constraint firstAttribute="trailing" secondItem="NV4-yM-aQh" secondAttribute="trailing" id="Llj-W9-1xH"/>
+                                    <constraint firstItem="LgW-xa-qta" firstAttribute="top" secondItem="NV4-yM-aQh" secondAttribute="bottom" id="aD2-BR-cWE"/>
+                                    <constraint firstItem="LgW-xa-qta" firstAttribute="leading" secondItem="yPm-CV-Z2B" secondAttribute="leading" id="rjd-zs-mmz"/>
+                                    <constraint firstItem="750-8B-M37" firstAttribute="centerX" secondItem="yPm-CV-Z2B" secondAttribute="centerX" id="smr-Jo-rVb"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="GWq-bJ-L77"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="yPm-CV-Z2B" firstAttribute="top" secondItem="bXW-90-Ffe" secondAttribute="topMargin" id="9WC-yR-A9p"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yPm-CV-Z2B" secondAttribute="trailing" id="BaA-F8-LFe"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="yPm-CV-Z2B" secondAttribute="bottom" id="CWf-o6-xAr"/>
+                            <constraint firstItem="yPm-CV-Z2B" firstAttribute="leading" secondItem="bXW-90-Ffe" secondAttribute="leadingMargin" id="FfB-GW-V9E"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3n9-Zf-2R9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="792.75362318840587" y="83.705357142857139"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Z2s-hh-fUW">
+            <objects>
+                <viewController id="lcJ-F1-xMl" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dDs-kU-XnD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="spb_background" translatesAutoresizingMaskIntoConstraints="NO" id="uVb-Az-1q0">
+                                <rect key="frame" x="-179" y="-903" width="859" height="2605"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="216" translatesAutoresizingMaskIntoConstraints="NO" id="Woo-ys-Hfm">
+                                <rect key="frame" x="15" y="144" width="384" height="618"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Поздравляем! " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g0x-ED-S0e">
+                                        <rect key="frame" x="0.0" y="0.0" width="384" height="65.5"/>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="60"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3HE-Lh-wWj">
+                                        <rect key="frame" x="0.0" y="281.5" width="384" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VGF-HB-ENt">
+                                        <rect key="frame" x="0.0" y="533.5" width="384" height="84.5"/>
+                                        <color key="backgroundColor" red="0.95686274770000002" green="0.88235294819999999" blue="0.89411771299999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="40"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Пройти еще раз">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gbO-vi-GB5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gbO-vi-GB5" firstAttribute="trailing" secondItem="Woo-ys-Hfm" secondAttribute="trailing" constant="15" id="HiF-w4-wJX"/>
+                            <constraint firstItem="Woo-ys-Hfm" firstAttribute="leading" secondItem="gbO-vi-GB5" secondAttribute="leading" constant="15" id="T4O-6P-s0t"/>
+                            <constraint firstItem="Woo-ys-Hfm" firstAttribute="top" secondItem="gbO-vi-GB5" secondAttribute="top" constant="100" id="e4i-El-hYq"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="Woo-ys-Hfm" secondAttribute="bottom" constant="100" id="vT4-8E-Ru1"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Fp-3C-ON1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1528.985507246377" y="87.723214285714278"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="musicspb" width="225" height="225"/>
+        <image name="spb_background" width="1080" height="1350"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
