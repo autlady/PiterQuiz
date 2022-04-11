@@ -14,10 +14,11 @@
 		4BC96C0F280320A2004B44EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BC96C0E280320A2004B44EA /* Assets.xcassets */; };
 		4BC96C12280320A2004B44EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BC96C10280320A2004B44EA /* LaunchScreen.storyboard */; };
 		4BC96C1C28032A84004B44EA /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC96C1B28032A84004B44EA /* QuestionViewController.swift */; };
-		4BC96C1E2804405B004B44EA /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 4BC96C1D2804405B004B44EA /* README.md */; };
 		4BC96C20280440AB004B44EA /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC96C1F280440AB004B44EA /* StartViewController.swift */; };
 		4BC96C232804818A004B44EA /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC96C222804818A004B44EA /* Question.swift */; };
 		4BC96C27280481FB004B44EA /* QuizBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC96C26280481FB004B44EA /* QuizBrain.swift */; };
+		FD46836D28049A440056AE78 /* LYON-CREST.otf in Resources */ = {isa = PBXBuildFile; fileRef = FD46836C28049A440056AE78 /* LYON-CREST.otf */; };
+		FD46836F28049A5C0056AE78 /* LYON-CREST-SVG.otf in Resources */ = {isa = PBXBuildFile; fileRef = FD46836E28049A5C0056AE78 /* LYON-CREST-SVG.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,10 +31,11 @@
 		4BC96C11280320A2004B44EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4BC96C13280320A2004B44EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4BC96C1B28032A84004B44EA /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
-		4BC96C1D2804405B004B44EA /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../README.md; sourceTree = "<group>"; };
 		4BC96C1F280440AB004B44EA /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		4BC96C222804818A004B44EA /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		4BC96C26280481FB004B44EA /* QuizBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizBrain.swift; sourceTree = "<group>"; };
+		FD46836C28049A440056AE78 /* LYON-CREST.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LYON-CREST.otf"; sourceTree = "<group>"; };
+		FD46836E28049A5C0056AE78 /* LYON-CREST-SVG.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LYON-CREST-SVG.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +52,7 @@
 		4BC96BF9280320A2004B44EA = {
 			isa = PBXGroup;
 			children = (
+				FD46837028049A6C0056AE78 /* Custom Fonts */,
 				4BC96C04280320A2004B44EA /* PiterQuiz */,
 				4BC96C03280320A2004B44EA /* Products */,
 			);
@@ -67,7 +70,6 @@
 			isa = PBXGroup;
 			children = (
 				4BC96C2128048174004B44EA /* Model */,
-				4BC96C1D2804405B004B44EA /* README.md */,
 				4BC96C05280320A2004B44EA /* AppDelegate.swift */,
 				4BC96C07280320A2004B44EA /* SceneDelegate.swift */,
 				4BC96C09280320A2004B44EA /* ViewController.swift */,
@@ -88,6 +90,15 @@
 				4BC96C26280481FB004B44EA /* QuizBrain.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		FD46837028049A6C0056AE78 /* Custom Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				FD46836C28049A440056AE78 /* LYON-CREST.otf */,
+				FD46836E28049A5C0056AE78 /* LYON-CREST-SVG.otf */,
+			);
+			path = "Custom Fonts";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,9 +160,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BC96C12280320A2004B44EA /* LaunchScreen.storyboard in Resources */,
+				FD46836D28049A440056AE78 /* LYON-CREST.otf in Resources */,
 				4BC96C0F280320A2004B44EA /* Assets.xcassets in Resources */,
-				4BC96C1E2804405B004B44EA /* README.md in Resources */,
 				4BC96C0D280320A2004B44EA /* Main.storyboard in Resources */,
+				FD46836F28049A5C0056AE78 /* LYON-CREST-SVG.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

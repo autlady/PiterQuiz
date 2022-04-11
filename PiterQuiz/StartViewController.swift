@@ -41,7 +41,10 @@ class StartViewController: UIViewController {
         let label = UILabel()
         label.text = "Piter Quiz"
         label.textAlignment = NSTextAlignment.center
-        label.font = UIFont(name: "Marker Felt Thin", size: 55)
+        //label.font = UIFont(name: "Marker Felt Thin", size: 55)
+        label.font = UIFont(name: "LYON-CREST-SVG", size: 55)
+        // кастомный шрифт надо добавить в info.plist потом по имени пользоваться
+        // "Fonts provided by application"
         label.backgroundColor = .clear
         label.textColor = .black
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -56,7 +59,9 @@ class StartViewController: UIViewController {
         button.backgroundColor = UIColor(named: "Color")
         button.setTitle("Начать", for: .normal)
         button.setTitleColor(.black, for: .normal)
+        //button.titleLabel?.font = UIFont(name: "LYON-CREST-SVG", size: 40)
         button.titleLabel?.font = UIFont(name: "Marker Felt Thin", size: 40)
+        // не получилось кастомный шрифт использовать в кнопке
         button.layer.shadowColor = UIColor.black.cgColor
         button.layer.shadowOffset = CGSize(width: 4, height: 4)
         button.layer.shadowRadius = 4
