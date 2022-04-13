@@ -29,6 +29,7 @@ class StartViewController: UIViewController {
     }()
 
     private lazy var stackView: UIStackView = {
+
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.distribution = .fillEqually
@@ -73,7 +74,6 @@ class StartViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .systemTeal
         self.view.addSubview(backView)
         self.backView.addSubview(backgroundImageView)
         self.backView.addSubview(stackView)
@@ -111,8 +111,11 @@ class StartViewController: UIViewController {
 
 
     @objc private func didTapButton() {
+
         let questionVC = QuestionViewController()
-        self.navigationController?.pushViewController(questionVC, animated: true)
+        questionVC.modalPresentationStyle = .fullScreen
+        self.present(questionVC, animated: true)
+//        self.navigationController?.pushViewController(questionVC, animated: true)
     }
 }
 
@@ -133,3 +136,4 @@ class StartViewController: UIViewController {
 //        SwiftUIController()
 //    }
 //}
+
