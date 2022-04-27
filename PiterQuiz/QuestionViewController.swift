@@ -10,8 +10,10 @@ import UIKit
 class QuestionViewController: UIViewController {
 
     var quizBrain = QuizBrain()
-
     var timer = Timer()
+
+    var score = 0
+    var result = ""
 
     private lazy var backView: UIView = {
         let view = UIView()
@@ -32,9 +34,24 @@ class QuestionViewController: UIViewController {
 
     }()
 
+    private lazy var musicButton: UIButton = {
+
+        let button = UIButton(frame: CGRect(x: 300, y: 75, width: 50, height: 50))
+        button.backgroundColor = .white
+        button.layer.cornerRadius = 25
+        let image = UIImage(named: "musicspb")
+        button.setBackgroundImage(image, for: .normal)
+        button.clipsToBounds = true
+        button.translatesAutoresizingMaskIntoConstraints = true
+
+        return button
+        }()
+
     private lazy var progressBar: UIProgressView = {
 
         let bar = UIProgressView()
+        bar.backgroundColor = .white
+        bar.progressViewStyle = .bar
         bar.translatesAutoresizingMaskIntoConstraints = false
 
         return bar
@@ -53,13 +70,10 @@ class QuestionViewController: UIViewController {
 
     private lazy var questionLabel: UILabel = {
         let label = UILabel()
-        label.numberOfLines = 0 // переносится неправильно
-        label.lineBreakMode = .byWordWrapping // переносится неправильн
+        label.numberOfLines = 0
+        label.lineBreakMode = .byWordWrapping 
         label.textAlignment = NSTextAlignment.center
-        label.font = UIFont(name: "Marker Felt Thin", size: 30)
-//        label.font = UIFont(name: "LYON-CREST-SVG", size: 20)
-        // кастомный шрифт надо добавить в info.plist потом по имени пользоваться
-        // "Fonts provided by application"
+        label.font = UIFont(name: "Hyatheus", size: 30)
         label.backgroundColor = .clear
         label.textColor = .black
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -67,63 +81,50 @@ class QuestionViewController: UIViewController {
         return label
     }()
 
-    let firstButton: UIButton = {
+    private lazy var firstButton: UIButton = {
 
         let button = UIButton(type: .system)
-        button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
-        button.layer.cornerRadius = 12
-        button.backgroundColor = UIColor(named: "Color")
-        button.setTitleColor(.black, for: .normal)
-        button.titleLabel?.font = UIFont(name: "Marker Felt Thin", size: 20)
-        button.layer.shadowColor = UIColor.black.cgColor
-        button.layer.shadowOffset = CGSize(width: 4, height: 4)
-        button.layer.shadowRadius = 4
-        button.layer.shadowOpacity = 0.7
-        button.translatesAutoresizingMaskIntoConstraints = false
+        settingButtons(button: button)
 
         return button
     }()
 
-    let secondButton: UIButton = {
+    private lazy var secondButton: UIButton = {
 
         let button = UIButton(type: .system)
-        button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
-        button.layer.cornerRadius = 12
-        button.backgroundColor = UIColor(named: "Color")
-        button.setTitleColor(.black, for: .normal)
-        button.titleLabel?.font = UIFont(name: "Marker Felt Thin", size: 20)
-        button.layer.shadowColor = UIColor.black.cgColor
-        button.layer.shadowOffset = CGSize(width: 4, height: 4)
-        button.layer.shadowRadius = 4
-        button.layer.shadowOpacity = 0.7
-        button.translatesAutoresizingMaskIntoConstraints = false
+        settingButtons(button: button)
 
         return button
     }()
 
 
-    let thirdButton: UIButton = {
+    private lazy var thirdButton: UIButton = {
 
         let button = UIButton(type: .system)
-        button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
-        button.layer.cornerRadius = 12
-        button.backgroundColor = UIColor(named: "Color")
-        button.setTitleColor(.black, for: .normal)
-        button.titleLabel?.font = UIFont(name: "Marker Felt Thin", size: 20)
-        button.layer.shadowColor = UIColor.black.cgColor
-        button.layer.shadowOffset = CGSize(width: 4, height: 4)
-        button.layer.shadowRadius = 4
-        button.layer.shadowOpacity = 0.7
-        button.translatesAutoresizingMaskIntoConstraints = false
+        settingButtons(button: button)
 
         return button
         }()
+
+    private func settingButtons (button: UIButton) {
+        button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
+        button.layer.cornerRadius = 12
+        button.backgroundColor = UIColor(named: "Color")
+        button.setTitleColor(.black, for: .normal)
+        button.titleLabel?.font = UIFont(name: "Hyatheus", size: 20)
+        button.layer.shadowColor = UIColor.black.cgColor
+        button.layer.shadowOffset = CGSize(width: 4, height: 4)
+        button.layer.shadowRadius = 4
+        button.layer.shadowOpacity = 0.7
+        button.translatesAutoresizingMaskIntoConstraints = false
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
         self.view.addSubview(backView)
         self.backView.addSubview(backgroundImageView)
+        self.backView.addSubview(musicButton)
         self.backView.addSubview(progressBar)
         self.backView.addSubview(questionLabel)
         self.backView.addSubview(stackView)
@@ -144,20 +145,18 @@ class QuestionViewController: UIViewController {
         let trailingImageConstraint = self.backgroundImageView.trailingAnchor.constraint(equalTo: self.backView.trailingAnchor)
         let bottomImageConstraint = self.backgroundImageView.bottomAnchor.constraint(equalTo: self.backView.bottomAnchor)
 
-        let topBarConstraint = self.progressBar.topAnchor.constraint(equalTo: self.backView.topAnchor, constant: -10)
-        let leadingBarConstraint = self.progressBar.leadingAnchor.constraint(equalTo: self.backView.leadingAnchor, constant: 15)
-        let trailingBarConstraint = self.progressBar.trailingAnchor.constraint(equalTo: self.backView.trailingAnchor, constant: -15)
-        let heightBarConstraint = self.progressBar.heightAnchor.constraint(equalToConstant: 20)
+        let bottomBarConstraint = self.progressBar.bottomAnchor.constraint(equalTo: self.backView.bottomAnchor, constant: -50)
+        let leadingBarConstraint = self.progressBar.leadingAnchor.constraint(equalTo: self.backView.leadingAnchor, constant: 60)
+        let trailingBarConstraint = self.progressBar.trailingAnchor.constraint(equalTo: self.backView.trailingAnchor, constant: -60)
+        let heightBarConstraint = self.progressBar.heightAnchor.constraint(equalToConstant: 15)
+        let barCenterXConstraint = self.progressBar.centerXAnchor.constraint(equalTo: self.backView.centerXAnchor)
 
-//        let topLabelConstraint = self.questionLabel.topAnchor.constraint(equalTo: self.backView.topAnchor, constant: -20)
         let topLabelConstraint = self.questionLabel.topAnchor.constraint(equalTo: self.backView.topAnchor, constant: -50)
-
         let leadingLabelConstraint = self.questionLabel.leadingAnchor.constraint(equalTo: self.backView.leadingAnchor, constant: 20)
         let trailingLabelConstraint = self.questionLabel.trailingAnchor.constraint(equalTo: self.backView.trailingAnchor, constant: -20)
         let bottomLabelConstraint = self.questionLabel.bottomAnchor.constraint(equalTo: self.stackView.topAnchor)
 
         let stackViewCenterXConstraint = self.stackView.centerXAnchor.constraint(equalTo: self.backView.centerXAnchor)
-//        let stackViewCenterYConstraint = self.stackView.centerYAnchor.constraint(equalTo: self.backView.centerYAnchor)
         let stackViewLeadingConstraint = self.stackView.leadingAnchor.constraint(equalTo: self.backView.leadingAnchor, constant: 60)
         let stackViewTrailingConstraint = self.stackView.trailingAnchor.constraint(equalTo: self.backView.trailingAnchor, constant: -60)
         let stackViewBottomConstraint = self.stackView.bottomAnchor.constraint(equalTo: self.backView.bottomAnchor, constant: -100)
@@ -166,14 +165,12 @@ class QuestionViewController: UIViewController {
         let secondButtonHeightAnchor = self.secondButton.heightAnchor.constraint(equalToConstant: 50)
         let thirdButtonHeightAnchor = self.secondButton.heightAnchor.constraint(equalToConstant: 50)
 
-
-        NSLayoutConstraint.activate([ topBarConstraint, leadingBarConstraint, trailingBarConstraint, heightBarConstraint,
+        NSLayoutConstraint.activate([ barCenterXConstraint, bottomBarConstraint, leadingBarConstraint, trailingBarConstraint, heightBarConstraint,
             topConstraint, leadingConstraint, bottomConstraint, trailingConstraint, topImageConstraint,
             leadingImageConstraint, trailingImageConstraint, bottomImageConstraint, stackViewCenterXConstraint, stackViewBottomConstraint,   stackViewLeadingConstraint, stackViewTrailingConstraint, topLabelConstraint, leadingLabelConstraint, trailingLabelConstraint, bottomLabelConstraint,
             firstButtonHeightAnchor, secondButtonHeightAnchor, thirdButtonHeightAnchor
         ])
     }
-
     
     @objc func updateUI() {
         questionLabel.text = quizBrain.getQuestionText()
@@ -183,12 +180,38 @@ class QuestionViewController: UIViewController {
         progressBar.progress = quizBrain.getProgress()
     }
 
-   @objc private func didTapButton() {
+   @objc private func didTapButton(_ sender: UIButton) {
+       sender.alpha = 0.5
+          DispatchQueue.main.asyncAfter(deadline: .now() + 0.2 ) {
+              sender.alpha = 1.0
+          }
 
-       quizBrain.nextQuestion()
+       let userAnswer = sender.currentTitle!
+       let userGotItRight = quizBrain.checkAnswer(userAnswer)
+       if userGotItRight {
+           score += 1
+       }
 
-       Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
+       if  quizBrain.questionNumber + 1 < quizBrain.quiz.count {
+           quizBrain.questionNumber += 1
+
+           Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
+
+            } else {
+                let vc = ResultViewController()
+                vc.score = score
+                if score >= 0 && score < 6 {
+                    vc.result = "Узнайте Питер лучше"
+                } else if score >= 6 && score < 10 {
+                    vc.result = "Вы хорошо знаете Питер"
+                } else if score >= 10 && score < 14 {
+                    vc.result = "Вы - знаток Питера!"
+                } else {
+                vc.result = "Нет результата"
+                }
+
+                self.navigationController?.pushViewController(vc, animated: true)
+
+            }
     }
-
 }
-

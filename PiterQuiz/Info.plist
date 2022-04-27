@@ -5,6 +5,7 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>LYON-CREST-SVG.otf</string>
+		<string>Hyatheus.otf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

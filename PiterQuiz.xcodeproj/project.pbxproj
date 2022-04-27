@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4B084A8D28057EC9005D8C8D /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B084A8C28057EC9005D8C8D /* ResultViewController.swift */; };
+		4B8780242819A26C006B259A /* Hyatheus.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4B8780232819A26C006B259A /* Hyatheus.otf */; };
 		4BC96C06280320A2004B44EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC96C05280320A2004B44EA /* AppDelegate.swift */; };
 		4BC96C08280320A2004B44EA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC96C07280320A2004B44EA /* SceneDelegate.swift */; };
 		4BC96C0A280320A2004B44EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC96C09280320A2004B44EA /* ViewController.swift */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		4B084A8C28057EC9005D8C8D /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		4B8780232819A26C006B259A /* Hyatheus.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Hyatheus.otf; path = ../../../Downloads/Hyatheus/Hyatheus.otf; sourceTree = "<group>"; };
 		4BC96C02280320A2004B44EA /* PiterQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PiterQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BC96C05280320A2004B44EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4BC96C07280320A2004B44EA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 			children = (
 				FD46836C28049A440056AE78 /* LYON-CREST.otf */,
 				FD46836E28049A5C0056AE78 /* LYON-CREST-SVG.otf */,
+				4B8780232819A26C006B259A /* Hyatheus.otf */,
 			);
 			path = "Custom Fonts";
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B8780242819A26C006B259A /* Hyatheus.otf in Resources */,
 				4BC96C12280320A2004B44EA /* LaunchScreen.storyboard in Resources */,
 				FD46836D28049A440056AE78 /* LYON-CREST.otf in Resources */,
 				4BC96C0F280320A2004B44EA /* Assets.xcassets in Resources */,

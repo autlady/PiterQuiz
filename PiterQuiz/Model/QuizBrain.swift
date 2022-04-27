@@ -11,7 +11,7 @@ struct QuizBrain {
     let quiz = [
         Question(q: "Где находится город с таким же названием?", a: ["Флорида, CША", "Канада", "Австралия"], correctAnswer: "Флорида, CША"),
         Question(q: "Кто такие эрмики?", a: ["Питерские художники", "Завсегдатаи Эрмитажа", "Эрмитажные коты"], correctAnswer: "Эрмитажные коты"),
-        Question(q: "Кто из героев фильма сказал: 'В этом городе львов больше, чем жителей?'", a: ["Джузеппе", "Ольга", "Антонио"], correctAnswer: "Джузеппе"),
+        Question(q: "Кто из героев фильма сказал:\n'В этом городе львов больше, чем жителей?'", a: ["Джузеппе", "Ольга", "Антонио"], correctAnswer: "Джузеппе"),
         Question(q: "Где исток Невы?", a: ["В Онежском озере", "В Ладожском озере", "В Финском заливе"], correctAnswer: "В Ладожском озере"),
         Question(q: "Самая глубокая станция петербургского метро?", a: ["Спортивная", "Адмиралтейская", "Василеостровская"], correctAnswer: "Адмиралтейская"),
         Question(q: "Из чего сделан Медный всадник?", a: ["Бронза", "Чугун", "Медь"], correctAnswer: "Бронза"),
@@ -20,16 +20,16 @@ struct QuizBrain {
         Question(q: "Когда в Питере белые ночи?", a: ["1 мая - 19 мая", "20 мая - 10 июня", "11 июня - 2 июля"], correctAnswer: "11 июня - 2 июля"),
         Question(q: "В Питере...", a: ["Пить", "Гулять", "Любить"], correctAnswer: "Пить"),
         Question(q: "Васька для питерцев - это:", a: ["Памятник коту", "Васильевский остров", "Знаменитый ночной клуб"], correctAnswer: "Васильевский остров"),
-        Question(q: "Кто автор строк? Город душный и суровый С черных труб сметает гарь... Ах! своей столицей новой Недоволен государь:", a: ["Пушкин", "Ахматова", "Мандельштам"], correctAnswer: "Ахматова"),
+        Question(q: "Кто автор строк? \nГород душный и суровый \nС черных труб сметает гарь... \nАх! своей столицей новой \nНедоволен государь", a: ["Пушкин", "Ахматова", "Мандельштам"], correctAnswer: "Ахматова"),
         Question(q: "Где в Питере по легенде зарыт клад?", a: ["В Петропавловской крепости", "В Ленинградском зоопарке", "В Екатерининском саду"], correctAnswer: "В Екатерининском саду")
     ]
 
     var questionNumber = 0
-    var score = 0
+//    var score = 0
 
     mutating func checkAnswer(_ userAnswer: String) -> Bool {
             if userAnswer == quiz[questionNumber].correctAnswer {
-            score += 1
+//            score += 1
             return true
         } else {
             return false
@@ -59,18 +59,8 @@ struct QuizBrain {
         return progress
     }
 
-    mutating func nextQuestion() {
-        if  questionNumber + 1 < quiz.count {
-            questionNumber += 1
-
-        } else {
-            questionNumber = 0
-            score = 0
-        }
-    }
-
-    mutating func getScore() -> Int {
-        return score
-    }
+//    mutating func getScore() -> Int {
+//        return score
+//    }
 
 }

@@ -42,10 +42,7 @@ class StartViewController: UIViewController {
         let label = UILabel()
         label.text = "Piter Quiz"
         label.textAlignment = NSTextAlignment.center
-        //label.font = UIFont(name: "Marker Felt Thin", size: 55)
         label.font = UIFont(name: "LYON-CREST-SVG", size: 55)
-        // кастомный шрифт надо добавить в info.plist потом по имени пользоваться
-        // "Fonts provided by application"
         label.backgroundColor = .clear
         label.textColor = .black
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -60,9 +57,7 @@ class StartViewController: UIViewController {
         button.backgroundColor = UIColor(named: "Color")
         button.setTitle("Начать", for: .normal)
         button.setTitleColor(.black, for: .normal)
-        //button.titleLabel?.font = UIFont(name: "LYON-CREST-SVG", size: 40)
-        button.titleLabel?.font = UIFont(name: "Marker Felt Thin", size: 40)
-        // не получилось кастомный шрифт использовать в кнопке
+        button.titleLabel?.font = UIFont(name: "Hyatheus", size: 40)
         button.layer.shadowColor = UIColor.black.cgColor
         button.layer.shadowOffset = CGSize(width: 4, height: 4)
         button.layer.shadowRadius = 4
@@ -81,6 +76,7 @@ class StartViewController: UIViewController {
         self.stackView.addArrangedSubview(startButton)
         self.activateConstraints()
     }
+
 
     func activateConstraints() {
         let topConstraint = self.backView.topAnchor.constraint(equalTo: self.view.topAnchor)
@@ -101,7 +97,6 @@ class StartViewController: UIViewController {
         let startLabelHeightAnchor = self.startLabel.heightAnchor.constraint(equalToConstant: 50)
         let buttonHeightAnchor = self.startButton.heightAnchor.constraint(equalToConstant: 50)
 
-
         NSLayoutConstraint.activate([
             topConstraint, leadingConstraint, bottomConstraint, trailingConstraint, topImageConstraint,
             leadingImageConstraint, trailingImageConstraint, bottomImageConstraint, stackViewCenterXConstraint,  stackViewCenterYConstraint, stackViewLeadingConstraint, stackViewTrailingConstraint,
@@ -109,16 +104,16 @@ class StartViewController: UIViewController {
         ])
     }
 
-
     @objc private func didTapButton() {
 
         let questionVC = QuestionViewController()
-        questionVC.modalPresentationStyle = .fullScreen
-        self.present(questionVC, animated: true)
-//        self.navigationController?.pushViewController(questionVC, animated: true)
+        self.navigationController?.pushViewController(questionVC, animated: true)
     }
 }
 
+//
+//import SwiftUI
+//
 //struct SwiftUIController: UIViewControllerRepresentable {
 //    typealias UIViewControllerType = StartViewController
 //        func makeUIViewController(context: Context) -> UIViewControllerType  {
@@ -127,13 +122,15 @@ class StartViewController: UIViewController {
 //        }
 //
 //        func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
-//
 //        }
 //    }
 //
 //struct SwiftUIController_Previews: PreviewProvider {
 //    static var previews: some View {
 //        SwiftUIController()
+//            .previewInterfaceOrientation(.portraitUpsideDown)
 //    }
 //}
+
+
 
