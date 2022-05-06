@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		4B084A8D28057EC9005D8C8D /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B084A8C28057EC9005D8C8D /* ResultViewController.swift */; };
 		4B8780242819A26C006B259A /* Hyatheus.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4B8780232819A26C006B259A /* Hyatheus.otf */; };
+		4BC2BE182823047A00126991 /* Purple_Avenue_-_Love_and_Sex_and_Magic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4BC2BE172823047A00126991 /* Purple_Avenue_-_Love_and_Sex_and_Magic.mp3 */; };
+		4BC2BE1C2823098F00126991 /* DatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC2BE1B2823098F00126991 /* DatingViewController.swift */; };
+		4BC2BE1E28230B2F00126991 /* Mumijj_Troll_-_Takie_devchonki.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4BC2BE1D28230B2F00126991 /* Mumijj_Troll_-_Takie_devchonki.mp3 */; };
 		4BC96C06280320A2004B44EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC96C05280320A2004B44EA /* AppDelegate.swift */; };
 		4BC96C08280320A2004B44EA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC96C07280320A2004B44EA /* SceneDelegate.swift */; };
 		4BC96C0A280320A2004B44EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC96C09280320A2004B44EA /* ViewController.swift */; };
@@ -26,6 +29,9 @@
 /* Begin PBXFileReference section */
 		4B084A8C28057EC9005D8C8D /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		4B8780232819A26C006B259A /* Hyatheus.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Hyatheus.otf; path = ../../../Downloads/Hyatheus/Hyatheus.otf; sourceTree = "<group>"; };
+		4BC2BE172823047A00126991 /* Purple_Avenue_-_Love_and_Sex_and_Magic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Purple_Avenue_-_Love_and_Sex_and_Magic.mp3"; sourceTree = "<group>"; };
+		4BC2BE1B2823098F00126991 /* DatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatingViewController.swift; sourceTree = "<group>"; };
+		4BC2BE1D28230B2F00126991 /* Mumijj_Troll_-_Takie_devchonki.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Mumijj_Troll_-_Takie_devchonki.mp3"; sourceTree = "<group>"; };
 		4BC96C02280320A2004B44EA /* PiterQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PiterQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BC96C05280320A2004B44EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4BC96C07280320A2004B44EA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,7 +89,10 @@
 				4BC96C13280320A2004B44EA /* Info.plist */,
 				4BC96C1B28032A84004B44EA /* QuestionViewController.swift */,
 				4BC96C1F280440AB004B44EA /* StartViewController.swift */,
+				4BC2BE1B2823098F00126991 /* DatingViewController.swift */,
 				4B084A8C28057EC9005D8C8D /* ResultViewController.swift */,
+				4BC2BE172823047A00126991 /* Purple_Avenue_-_Love_and_Sex_and_Magic.mp3 */,
+				4BC2BE1D28230B2F00126991 /* Mumijj_Troll_-_Takie_devchonki.mp3 */,
 			);
 			path = PiterQuiz;
 			sourceTree = "<group>";
@@ -168,9 +177,11 @@
 				4B8780242819A26C006B259A /* Hyatheus.otf in Resources */,
 				4BC96C12280320A2004B44EA /* LaunchScreen.storyboard in Resources */,
 				FD46836D28049A440056AE78 /* LYON-CREST.otf in Resources */,
+				4BC2BE182823047A00126991 /* Purple_Avenue_-_Love_and_Sex_and_Magic.mp3 in Resources */,
 				4BC96C0F280320A2004B44EA /* Assets.xcassets in Resources */,
 				4BC96C0D280320A2004B44EA /* Main.storyboard in Resources */,
 				FD46836F28049A5C0056AE78 /* LYON-CREST-SVG.otf in Resources */,
+				4BC2BE1E28230B2F00126991 /* Mumijj_Troll_-_Takie_devchonki.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,6 +200,7 @@
 				4BC96C232804818A004B44EA /* Question.swift in Sources */,
 				4BC96C1C28032A84004B44EA /* QuestionViewController.swift in Sources */,
 				4BC96C08280320A2004B44EA /* SceneDelegate.swift in Sources */,
+				4BC2BE1C2823098F00126991 /* DatingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

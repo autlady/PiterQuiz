@@ -6,12 +6,23 @@
 //
 
 import UIKit
+import AVFoundation
 
 class QuestionViewController: UIViewController {
 
     var quizBrain = QuizBrain()
     var timer = Timer()
+    var player: AVAudioPlayer!
 
+    func playSound() {
+            do {
+                self.player =  try AVAudioPlayer(contentsOf: Bundle.main.url(forResource: "Mumijj_Troll_-_Takie_devchonki", withExtension: "mp3")!)
+                self.player.play()
+
+            } catch {
+                print("Error")
+            }
+        }
     var score = 0
     var result = ""
 
@@ -37,6 +48,7 @@ class QuestionViewController: UIViewController {
     private lazy var musicButton: UIButton = {
 
         let button = UIButton(frame: CGRect(x: 300, y: 75, width: 50, height: 50))
+        button.addTarget(self, action: #selector(didTapMusicButton), for: .touchUpInside)
         button.backgroundColor = .white
         button.layer.cornerRadius = 25
         let image = UIImage(named: "musicspb")
@@ -121,6 +133,7 @@ class QuestionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        playSound()
         updateUI()
         self.view.addSubview(backView)
         self.backView.addSubview(backgroundImageView)
@@ -178,6 +191,14 @@ class QuestionViewController: UIViewController {
         secondButton.setTitle(quizBrain.getSecondButtonText(), for: .normal)
         thirdButton.setTitle(quizBrain.getThirdButtonText(), for: .normal)
         progressBar.progress = quizBrain.getProgress()
+    }
+
+    @objc private func didTapMusicButton(_ sender: UIButton) {
+        if player.isPlaying {
+            player.stop()
+        } else {
+            player.play()
+        }
     }
 
    @objc private func didTapButton(_ sender: UIButton) {

@@ -33,14 +33,24 @@ class StartViewController: UIViewController {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.distribution = .fillEqually
-        stackView.spacing = 400
+        stackView.spacing = 200
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
+
+    private lazy var buttonStackView: UIStackView = {
+
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.distribution = .fillEqually
+        stackView.spacing = 5
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
 
     private lazy var startLabel: UILabel = {
         let label = UILabel()
-        label.text = "Piter Quiz"
+//        label.text = "Piter Quiz"
         label.textAlignment = NSTextAlignment.center
         label.font = UIFont(name: "LYON-CREST-SVG", size: 55)
         label.backgroundColor = .clear
@@ -50,33 +60,55 @@ class StartViewController: UIViewController {
         return label
     }()
 
-    let startButton: UIButton = {
+    private lazy var startQuizButton: UIButton = {
         let button = UIButton(type: .system)
-        button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
+        button.addTarget(self, action: #selector(didTapQuizButton), for: .touchUpInside)
+        button.setTitle("Piter Quiz", for: .normal)
+        settingButtons(button: button)
+        return button
+    }()
+
+    private lazy var datingButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.addTarget(self, action: #selector(didTapDateButton), for: .touchUpInside)
+        button.setTitle("Perfect Date", for: .normal)
+        settingButtons(button: button)
+        return button
+    }()
+
+    private func settingButtons (button: UIButton) {
         button.layer.cornerRadius = 12
         button.backgroundColor = UIColor(named: "Color")
-        button.setTitle("Начать", for: .normal)
         button.setTitleColor(.black, for: .normal)
-        button.titleLabel?.font = UIFont(name: "Hyatheus", size: 40)
+        button.titleLabel?.font = UIFont(name: "Hyatheus", size: 30)
         button.layer.shadowColor = UIColor.black.cgColor
         button.layer.shadowOffset = CGSize(width: 4, height: 4)
         button.layer.shadowRadius = 4
         button.layer.shadowOpacity = 0.7
         button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
-
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addSubview(backView)
         self.backView.addSubview(backgroundImageView)
-        self.backView.addSubview(stackView)
-        self.stackView.addArrangedSubview(startLabel)
-        self.stackView.addArrangedSubview(startButton)
+        self.backView.addSubview(startLabel)
+        self.backView.addSubview(buttonStackView)
+        self.buttonStackView.addArrangedSubview(startQuizButton)
+        self.buttonStackView.addArrangedSubview(datingButton)
         self.activateConstraints()
-    }
 
+        startLabel.text = ""
+        var charIndex = 0.0
+        let titleText = "Magic Piter"
+        for letter in titleText {
+
+            Timer.scheduledTimer(withTimeInterval: 0.1 * charIndex, repeats: false) { (timer) in
+                self.startLabel.text?.append(letter)
+            }
+            charIndex += 1
+        }
+    }
 
     func activateConstraints() {
         let topConstraint = self.backView.topAnchor.constraint(equalTo: self.view.topAnchor)
@@ -89,25 +121,33 @@ class StartViewController: UIViewController {
         let trailingImageConstraint = self.backgroundImageView.trailingAnchor.constraint(equalTo: self.backView.trailingAnchor)
         let bottomImageConstraint = self.backgroundImageView.bottomAnchor.constraint(equalTo: self.backView.bottomAnchor)
 
-        let stackViewCenterXConstraint = self.stackView.centerXAnchor.constraint(equalTo: self.backView.centerXAnchor)
-        let stackViewCenterYConstraint = self.stackView.centerYAnchor.constraint(equalTo: self.backView.centerYAnchor)
-        let stackViewLeadingConstraint = self.stackView.leadingAnchor.constraint(equalTo: self.backView.leadingAnchor, constant: 60)
-        let stackViewTrailingConstraint = self.stackView.trailingAnchor.constraint(equalTo: self.backView.trailingAnchor, constant: -60)
+        let topLabelConstraint = self.startLabel.topAnchor.constraint(equalTo: self.backView.topAnchor, constant: 150)
+        let leadingLabelConstraint = self.startLabel.leadingAnchor.constraint(equalTo: self.backView.leadingAnchor, constant: 30)
+        let trailingLabelConstraint = self.startLabel.trailingAnchor.constraint(equalTo: self.backView.trailingAnchor, constant: -30)
+        let heightLabelConstraint = self.startLabel.heightAnchor.constraint(equalToConstant: 50)
 
-        let startLabelHeightAnchor = self.startLabel.heightAnchor.constraint(equalToConstant: 50)
-        let buttonHeightAnchor = self.startButton.heightAnchor.constraint(equalToConstant: 50)
+        let stackViewCenterXConstraint = self.buttonStackView.centerXAnchor.constraint(equalTo: self.backView.centerXAnchor)
+        let stackViewCenterYConstraint = self.buttonStackView.centerYAnchor.constraint(equalTo: self.backView.centerYAnchor)
+        let stackViewLeadingConstraint = self.buttonStackView.leadingAnchor.constraint(equalTo: self.backView.leadingAnchor, constant: 60)
+        let stackViewTrailingConstraint = self.buttonStackView.trailingAnchor.constraint(equalTo: self.backView.trailingAnchor, constant: -60)
+
+        let buttonHeightAnchor = self.startQuizButton.heightAnchor.constraint(equalToConstant: 50)
+        let buttonTwoHeightAnchor = self.datingButton.heightAnchor.constraint(equalToConstant: 50)
 
         NSLayoutConstraint.activate([
             topConstraint, leadingConstraint, bottomConstraint, trailingConstraint, topImageConstraint,
-            leadingImageConstraint, trailingImageConstraint, bottomImageConstraint, stackViewCenterXConstraint,  stackViewCenterYConstraint, stackViewLeadingConstraint, stackViewTrailingConstraint,
-            startLabelHeightAnchor, buttonHeightAnchor
+            leadingImageConstraint, trailingImageConstraint, bottomImageConstraint, stackViewCenterXConstraint,  stackViewCenterYConstraint, stackViewLeadingConstraint, stackViewTrailingConstraint, buttonHeightAnchor, buttonTwoHeightAnchor, topLabelConstraint, leadingLabelConstraint, trailingLabelConstraint, heightLabelConstraint
         ])
     }
 
-    @objc private func didTapButton() {
-
+    @objc private func didTapQuizButton() {
         let questionVC = QuestionViewController()
         self.navigationController?.pushViewController(questionVC, animated: true)
+    }
+
+    @objc private func didTapDateButton() {
+        let datingVC = DatingViewController()
+        self.navigationController?.pushViewController(datingVC, animated: true)
     }
 }
 
