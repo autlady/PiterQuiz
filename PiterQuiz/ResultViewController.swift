@@ -70,7 +70,7 @@ private lazy var resultLabel: UILabel = {
         return label
     }()
 
-let transmissionButton: UIButton = {
+private lazy var transmissionButton: UIButton = {
 
     let button = UIButton(type: .system)
     button.addTarget(self, action: #selector(didTapTransmissionButton), for: .touchUpInside)

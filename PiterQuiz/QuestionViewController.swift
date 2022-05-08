@@ -23,7 +23,7 @@ class QuestionViewController: UIViewController {
                 print("Error")
             }
         }
-    var score = 0
+
     var result = ""
 
     private lazy var backView: UIView = {
@@ -208,10 +208,11 @@ class QuestionViewController: UIViewController {
           }
 
        let userAnswer = sender.currentTitle!
-       let userGotItRight = quizBrain.checkAnswer(userAnswer)
-       if userGotItRight {
-           score += 1
-       }
+       quizBrain.checkAnswer(userAnswer)
+//       let userGotItRight = quizBrain.checkAnswer(userAnswer)
+//       if userGotItRight {
+//           score += 1
+//       }
 
        if  quizBrain.questionNumber + 1 < quizBrain.quiz.count {
            quizBrain.questionNumber += 1
@@ -220,12 +221,12 @@ class QuestionViewController: UIViewController {
 
             } else {
                 let vc = ResultViewController()
-                vc.score = score
-                if score >= 0 && score < 6 {
+                vc.score = quizBrain.score
+                if quizBrain.score >= 0 && quizBrain.score < 6 {
                     vc.result = "Узнайте Питер лучше"
-                } else if score >= 6 && score < 10 {
+                } else if quizBrain.score >= 6 && quizBrain.score < 10 {
                     vc.result = "Вы хорошо знаете Питер"
-                } else if score >= 10 && score < 14 {
+                } else if quizBrain.score >= 10 && quizBrain.score < 14 {
                     vc.result = "Вы - знаток Питера!"
                 } else {
                 vc.result = "Нет результата"
